@@ -1,8 +1,16 @@
 <?xml version="1.0"?>
 <robot name="Kumara" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/kumara</robotNamespace>
+        </plugin>
+    </gazebo>
+
     <xacro:include filename="$(find kumara_description)/urdf/kumara_properties.xacro" />
-    <xacro:include filename="$(find kumara_description)/urdf/kumara.gazebo" />
+    <xacro:include filename="$(find kumara_description)/urdf/kumara_base.gazebo" />
+
+    <!-- ARM -->
     <xacro:include filename="$(find kumara_description)/urdf/kumara_arm.xacro" />
 
     <xacro:kumaraRA parent = "chassis"/>
@@ -11,9 +19,9 @@
 
     <link name="chassis">
         <collision> 
-			<origin xyz="0 0 ${-0.23/2}"/> 
+			<origin xyz="0 0 -${0.23/2}"/> 
 			<geometry> 
-				<box size = "0.2 0.2 0.23"/>
+				<box size = "${BASE_LENGTH} ${BASE_WIDTH} ${BASE_HEIGHT}"/>
 			</geometry> 
 		</collision>
 		<inertial>
@@ -32,10 +40,9 @@
     <joint name="base_footprint_to_base_link" type="fixed">
         <parent link="base_footprint"/>
         <child link="chassis"/>
-        <origin xyz="0 0 0.23"/>
+        <origin xyz="0 0 ${BASE_HEIGHT}"/>
         <axis xyz = "0 1 0"/>
         <limit effort = "50" velocity = "10"/>
     </joint>
-
 
 </robot>
