@@ -26,3 +26,23 @@ kumara:
   base_z_torque_controller:
     type: effort_controllers/JointEffortController
     joint: base_z_axis_joint
+  neck_x_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: neck_tran_x_joint
+    pid: {p: 50.0, i: 0.1, d: 10.0}
+  neck_z_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: neck_tran_z_joint
+    pid: {p: 50.0, i: 0.1, d: 10.0}
+  neck_rx_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: neck_rot_x_joint
+    pid: {p: 70.0, i: 0.1, d: 20.0}
+  neck_ry_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: neck_rot_y_joint
+    pid: {p: 70.0, i: 0.1, d: 20.0}
+  neck_rz_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: neck_rot_z_joint
+    pid: {p: 70.0, i: 0.1, d: 20.0}
