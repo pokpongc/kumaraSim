@@ -11,9 +11,16 @@
     <xacro:include filename="$(find kumara_description)/urdf/kumara_base.gazebo" />
 
     <!-- ARM -->
-    <xacro:include filename="$(find kumara_description)/urdf/kumara_arm.xacro" />
+    <xacro:include filename="$(find kumara_description)/urdf/kumara_arm.xacro" />\
 
+    <!-- UTILITIES -->
+    <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
+
+    <!-- COMPONENTS -->
     <xacro:kumaraRA parent = "chassis"/>
+    <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
+
+    <link name="world"/>
 
     <link name="base_footprint"/>
 
@@ -36,13 +43,10 @@
         </visual>
     </link>
 
-
-    <joint name="base_footprint_to_base_link" type="fixed">
+    <joint name="base_footprint_to_chassis" type="fixed">
         <parent link="base_footprint"/>
         <child link="chassis"/>
         <origin xyz="0 0 ${BASE_HEIGHT}"/>
-        <axis xyz = "0 1 0"/>
-        <limit effort = "50" velocity = "10"/>
     </joint>
 
 </robot>

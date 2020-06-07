@@ -2,11 +2,14 @@
   <rosparam file="$(find kumara_description)/config/primitive_control.yaml" command="load"/>
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
   output="screen" ns="/kumara" 
-  args="joint1_torque_controller 
-  joint2_torque_controller 
-  joint3_torque_controller 
-  joint4_torque_controller 
-  joint5_torque_controller 
+  args="r_arm_q1_torque_controller 
+  r_arm_q2_torque_controller 
+  r_arm_q3_torque_controller 
+  r_arm_q4_torque_controller 
+  r_arm_q5_torque_controller
+  base_x_force_controller
+  base_y_force_controller
+  base_z_torque_controller 
   joint_state_controller"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
     respawn="false" output="screen">

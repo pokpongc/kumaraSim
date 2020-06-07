@@ -2,8 +2,9 @@
 <robot>
 
 	<gazebo reference="chassis">
-		<mu1>0.3</mu1>
-		<mu2>0.3</mu2>
+		<mu1>0</mu1>
+		<mu2>0</mu2>
+		<!-- <dampingFactor> 0.4 </dampingFactor> -->
 		<material>Gazebo/Grey</material>
 	</gazebo>
 	

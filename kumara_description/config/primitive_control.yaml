@@ -2,18 +2,27 @@ kumara:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 60  
-  joint1_torque_controller:
+  r_arm_q1_torque_controller:
     type: effort_controllers/JointEffortController
     joint: arm_base_to_link_1
-  joint2_torque_controller:
+  r_arm_q2_torque_controller:
     type: effort_controllers/JointEffortController
     joint: link_1_to_link_2
-  joint3_torque_controller:
+  r_arm_q3_torque_controller:
     type: effort_controllers/JointEffortController
     joint: link_2_to_link_3
-  joint4_torque_controller:
+  r_arm_q4_torque_controller:
     type: effort_controllers/JointEffortController
     joint: link_3_to_link_4
-  joint5_torque_controller:
+  r_arm_q5_torque_controller:
     type: effort_controllers/JointEffortController
     joint: link_4_to_link_5
+  base_x_force_controller:
+    type: effort_controllers/JointEffortController
+    joint: base_x_axis_joint
+  base_y_force_controller:
+    type: effort_controllers/JointEffortController
+    joint: base_y_axis_joint
+  base_z_torque_controller:
+    type: effort_controllers/JointEffortController
+    joint: base_z_axis_joint
