@@ -16,6 +16,9 @@
     <!-- NECK -->
     <xacro:include filename="$(find kumara_description)/urdf/kumara_neck.xacro" />
 
+    <!-- CAMERA -->
+    <xacro:include filename="$(find kumara_description)/urdf/kumara_camera.xacro" />
+
     <!-- UTILITIES -->
     <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
 
@@ -23,6 +26,7 @@
     <xacro:kumaraRA parent = "chassis"/>
     <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
     <xacro:kumara_neck parent = "chassis" child = "head_link"/>
+    <xacro:kumara_camera parent = "head_link"/>
 
     <link name="world"/>
 
