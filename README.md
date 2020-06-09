@@ -34,7 +34,7 @@ Select your workspace.
 source <PATH_TO_WORKSPACE>/devel/setup.bash
 source ~/.bashrc
 ```
-VMware users must add export __SVGA_VGPU10=0__ to __~/.profile__ 
+VMware users must add `export SVGA_VGPU10=0` to `~/.profile` 
 
 ## Usage
 
