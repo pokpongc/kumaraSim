@@ -53,9 +53,13 @@ First, you must connect MATLAB to ROS by:
 ```bash
 rosinit('ip_address_on_ros_machine')
 ```
-Run the Simulink model
+Run the Simulink model:
 ```bash
 kumaraGazeboSim
+```
+Viewing the robot using Rviz:
+```bash
+roslaunch kumara_description kumara_rviz.launch 
 ```
 To end the ROS session:
 ```bash
