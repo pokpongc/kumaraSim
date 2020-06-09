@@ -46,6 +46,10 @@ To view the head-mounted camera run:
 ```bash
 rosrun image_view image_view image:=kumara/camera_head/image
 ```
+Viewing the robot using Rviz:
+```bash
+roslaunch kumara_description kumara_rviz.launch 
+```
 ### Simulink Interface
 
 First, you must connect MATLAB to ROS by:
@@ -56,10 +60,6 @@ rosinit('ip_address_on_ros_machine')
 Run the Simulink model:
 ```bash
 kumaraGazeboSim
-```
-Viewing the robot using Rviz:
-```bash
-roslaunch kumara_description kumara_rviz.launch 
 ```
 To end the ROS session:
 ```bash
