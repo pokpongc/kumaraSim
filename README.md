@@ -57,7 +57,7 @@ Run the Simulink model
 ```bash
 kumaraGazeboSim
 ```
-To end the connection:
+To end the ROS session:
 ```bash
 rosshutdown
 ```
