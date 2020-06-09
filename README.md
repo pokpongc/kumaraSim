@@ -16,7 +16,7 @@ Gazebo simulation files and description for FIBO's Kumara Robot.
 
 ## Installation
 
-If you already have your workspace, skip this step. Create a catkin workspace.
+If you already own a catkin workspace, skip this step. Create a catkin workspace.
 ```bash
 mkdir -p <WORKSPACE_NAME>/src
 cd <WORKSPACE_NAME>
@@ -34,7 +34,7 @@ Select your workspace.
 source <PATH_TO_WORKSPACE>/devel/setup.bash
 source ~/.bashrc
 ```
-VMware users must add `export SVGA_VGPU10=0` to `~/.profile` 
+VMware users must add `export SVGA_VGPU10=0` to `~/.profile` and then `source ~/.profile`
 
 ## Usage
 
