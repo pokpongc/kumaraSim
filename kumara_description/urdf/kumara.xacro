@@ -5,6 +5,9 @@
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/kumara</robotNamespace>
         </plugin>
+        <!-- <plugin name="gazebo_cosim" filename="~/GazeboPlugin/export/lib/libGazeboCoSimPlugin.so">
+            <portNumber>14581</portNumber>
+        </plugin> -->
     </gazebo>
 
     <xacro:include filename="$(find kumara_description)/urdf/kumara_properties.xacro" />
@@ -26,7 +29,7 @@
     <xacro:kumaraRA parent = "chassis"/>
     <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
     <xacro:kumara_neck parent = "chassis" child = "head_link"/>
-    <xacro:kumara_camera parent = "head_link"/>
+    <xacro:kumara_camera parent = "head_link" offset_from_parent = "0.072 0 0.1257"/>
 
     <link name="world"/>
 
@@ -76,6 +79,10 @@
             </geometry>
         </visual>
     </link>
+
+    <gazebo reference="head_link">
+		<material>Gazebo/Grey</material>
+	</gazebo>
 
 
 </robot>
