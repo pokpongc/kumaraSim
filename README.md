@@ -75,7 +75,7 @@ Y_axis orientation of the head relative to the body | kumara/neck_ry_position_co
 Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command
 Joints effort of the right arm | kumara/[q1-q5]_torque controller/command
 Head-mounted camera's output | kumara/camera_head/image
-For reading joint position and velocity | kumara/joint_states
+Reading joints' position and velocity | kumara/joint_states
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
