@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<robot name="KumaraCamera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="zed_mini" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
     <xacro:include filename="$(find kumara_description)/urdf/kumara_properties.xacro" />
     
-    <xacro:macro name="kumara_camera" params="parent offset_from_parent">
+    <xacro:macro name="zed_mini" params="parent offset_from_parent">
         <joint name="camera_joint" type="fixed">
             <origin xyz="${offset_from_parent}" rpy="0 0 0"/>
             <parent link="${parent}"/>
@@ -24,7 +24,6 @@
                 <geometry>
                     <mesh filename="package://kumara_description/meshes/zedmini_camera.STL" scale="1 1 1"/>
                 </geometry>
-                <material name="red"/>
             </visual>
 
             <inertial>

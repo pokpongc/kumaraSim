@@ -20,7 +20,10 @@
     <xacro:include filename="$(find kumara_description)/urdf/kumara_neck.xacro" />
 
     <!-- CAMERA -->
-    <xacro:include filename="$(find kumara_description)/urdf/kumara_camera.xacro" />
+    <xacro:include filename="$(find kumara_description)/urdf/zed_mini.xacro" />
+
+    <!-- LIDAR -->
+    <xacro:include filename="$(find kumara_description)/urdf/rplidar_a2.xacro" />
 
     <!-- UTILITIES -->
     <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
@@ -29,7 +32,8 @@
     <xacro:kumaraRA parent = "chassis"/>
     <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
     <xacro:kumara_neck parent = "chassis" child = "head_link"/>
-    <xacro:kumara_camera parent = "head_link" offset_from_parent = "0.072 0 0.1257"/>
+    <xacro:zed_mini parent = "head_link" offset_from_parent = "0.072 0 0.1257"/>
+    <xacro:rplidar_a2 suffix = "front" parent = "chassis" offset_from_parent = "-0.1 0 0.06"/>
 
     <link name="world"/>
 
