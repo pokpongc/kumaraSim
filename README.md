@@ -70,7 +70,7 @@ rosshutdown
 ```
 
 ## ROS topics
-Control parameter | ROS topic
+Actuator related action | ROS topic
 ------------ | -------------
 Force acted on the x_axis of the base relative to world | kumara/base_x_force_controller/command
 Force acted on the y_axis of the base relative to world | kumara/base_y_force_controller/command
@@ -81,7 +81,11 @@ X_axis orientation of the head relative to the body | kumara/neck_rx_position_co
 Y_axis orientation of the head relative to the body | kumara/neck_ry_position_controller/command
 Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command
 Joints effort of the right arm | kumara/[q1-q5]_torque controller/command
+
+Sensor related action | ROS topic
+------------ | -------------
 Head-mounted camera's output | kumara/camera_head/image
+LIDAR output | kumara/laser_[position]/scan
 Reading joints' position and velocity | kumara/joint_states
 
 ## License
