@@ -71,24 +71,25 @@ rosshutdown
 
 ## ROS topics
 ### Actuation
-Actuator related action | ROS topic
------------- | -------------
-Force acted on the x_axis of the base relative to world | kumara/base_x_force_controller/command
-Force acted on the y_axis of the base relative to world | kumara/base_y_force_controller/command
-Torque acted on the z_axis of the base | kumara/base_z_torque_controller/command
-X_axis position of the head relative to the body | kumara/neck_x_position_controller/command
-Z_axis position of the head relative to the body | kumara/neck_z_position_controller/command
-X_axis orientation of the head relative to the body | kumara/neck_rx_position_controller/command
-Y_axis orientation of the head relative to the body | kumara/neck_ry_position_controller/command
-Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command
-Joints effort of the right arm | kumara/[q1-q5]_torque controller/command
+Actuator Related Action | ROS Topic | Message Type
+------------ | ------------- | -------------
+Force acted on the x_axis of the base relative to world | kumara/base_x_force_controller/command | std_msgs/Float64
+Force acted on the y_axis of the base relative to world | kumara/base_y_force_controller/command | std_msgs/Float64
+Torque acted on the z_axis of the base | kumara/base_z_torque_controller/command | std_msgs/Float64
+X_axis position of the head relative to the body | kumara/neck_x_position_controller/command | std_msgs/Float64
+Z_axis position of the head relative to the body | kumara/neck_z_position_controller/command | std_msgs/Float64
+X_axis orientation of the head relative to the body | kumara/neck_rx_position_controller/command | std_msgs/Float64
+Y_axis orientation of the head relative to the body | kumara/neck_ry_position_controller/command | std_msgs/Float64
+Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command | std_msgs/Float64
+Joints effort of the right arm | kumara/[q1-q5]_torque controller/command | std_msgs/Float64
 
 ### Sensing
-Sensor related action | ROS topic
------------- | -------------
-Head-mounted camera's output | kumara/camera_head/image
-LIDAR output | kumara/laser_[position]/scan
-Reading joints' position and velocity | kumara/joint_states
+Sensor Related Action | ROS Topic | Message Type
+------------ | ------------- | -------------
+Head-mounted camera's output | kumara/camera_head/image | sensor_msgs/Image
+LIDAR output | kumara/laser_[position]/scan | sensor_msgs/LaserScan
+SONAR output | kumara/[position]_sonar | sensor_msgs/Range
+Reading joints' position and velocity | kumara/joint_states | sensor_msgs/JointState
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

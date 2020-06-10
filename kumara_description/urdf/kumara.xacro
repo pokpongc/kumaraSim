@@ -19,11 +19,10 @@
     <!-- NECK -->
     <xacro:include filename="$(find kumara_description)/urdf/kumara_neck.xacro" />
 
-    <!-- CAMERA -->
+    <!-- SENSORS -->
     <xacro:include filename="$(find kumara_description)/urdf/zed_mini.xacro" />
-
-    <!-- LIDAR -->
     <xacro:include filename="$(find kumara_description)/urdf/rplidar_a2.xacro" />
+    <xacro:include filename="$(find kumara_description)/urdf/sonar.xacro" />
 
     <!-- UTILITIES -->
     <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
@@ -33,7 +32,27 @@
     <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
     <xacro:kumara_neck parent = "chassis" child = "head_link"/>
     <xacro:zed_mini parent = "head_link" offset_from_parent = "0.072 0 0.1257"/>
-    <xacro:rplidar_a2 suffix = "front" parent = "chassis" offset_from_parent = "-0.1 0 0.06"/>
+    <xacro:rplidar_a2 prefix = "front" 
+                parent = "chassis" 
+                offset_from_parent = "-0.1 0 0.06"
+                visualize = "false"/>
+    <xacro:sonar prefix = "left" 
+                parent = "chassis" 
+                offset_from_parent = "0 0.24 -0.05" 
+                rotate_from_parent = "0 0 ${PId2}" 
+                max_range = "1.5" 
+                min_range = "0.03" 
+                fov = "0.12"
+                visualize = "true"/>
+    <xacro:sonar prefix = "right" 
+                parent = "chassis" 
+                offset_from_parent = "0 -0.24 -0.05" 
+                rotate_from_parent = "0 0 -${PId2}" 
+                max_range = "1.5" 
+                min_range = "0.03" 
+                fov = "0.12"
+                visualize = "true"/>
+
 
     <link name="world"/>
 

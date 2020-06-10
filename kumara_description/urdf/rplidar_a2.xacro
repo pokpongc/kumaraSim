@@ -3,15 +3,15 @@
     
     <xacro:include filename="$(find kumara_description)/urdf/kumara_properties.xacro" />
     
-    <xacro:macro name="rplidar_a2" params="suffix parent offset_from_parent">
-        <joint name="rplidar_joint_${suffix}" type="fixed">
+    <xacro:macro name="rplidar_a2" params="prefix parent offset_from_parent visualize">
+        <joint name="${prefix}_rplidar_joint" type="fixed">
             <origin xyz="${offset_from_parent}" rpy="0 0 0"/>
             <parent link="${parent}"/>
-            <child link="rplidar_link_${suffix}"/>
+            <child link="${prefix}_rplidar_link"/>
         </joint>
 
         
-        <link name="rplidar_link_${suffix}">
+        <link name="${prefix}_rplidar_link">
             <visual>
                 <origin xyz="0 0 -0.03" rpy="0 0 0"/>
                 <geometry>
@@ -27,11 +27,11 @@
             </inertial>
         </link>
 
-        <gazebo reference="rplidar_link_${suffix}">
+        <gazebo reference="${prefix}_rplidar_link">
             <material>Gazebo/Grey</material>
-            <sensor type="ray" name="rplidar_a2_${suffix}">
+            <sensor type="ray" name="${prefix}_rplidar_a2">
                 <pose>0 0 0 0 0 0</pose>
-                <visualize>true</visualize>
+                <visualize>${visualize}</visualize>
                 <update_rate>10</update_rate>
                 <ray>
                     <scan>
@@ -57,9 +57,9 @@
                         <stddev>0.01</stddev>
                     </noise>
                 </ray>
-                <plugin name="gazebo_ros_lidar_${suffix}" filename="libgazebo_ros_laser.so">
-                    <topicName>/kumara/laser_${suffix}/scan</topicName>
-                    <frameName>rplidar_link_${suffix}</frameName>
+                <plugin name="gazebo_ros_${prefix}_lidar" filename="libgazebo_ros_laser.so">
+                    <topicName>/kumara/${prefix}_laser/scan</topicName>
+                    <frameName>${prefix}_rplidar_link</frameName>
                 </plugin>
             </sensor>
         </gazebo>
