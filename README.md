@@ -11,7 +11,10 @@ Gazebo simulation files and description for FIBO's Kumara Robot.
 ## Prerequisite
 
 * Ubuntu 18.04 system with ROS Melodic Morenia
-* [ros_control](http://wiki.ros.org/ros_control) package
+* [ros_control](http://wiki.ros.org/ros_control) and [ros_controllers](http://wiki.ros.org/ros_controllers) package by:
+```bash
+sudo apt install ros-melodic-ros-control ros-melodic-ros-controllers
+```
 * MATLAB 2019b or 2020a with Simulink, [ROS Toolbox](https://www.mathworks.com/products/ros.html), and [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) (if you want to use the provided Simulink interface) 
 
 ## Installation
