@@ -12,7 +12,7 @@ Gazebo simulation files and description for FIBO's Kumara Robot.
 
 * Ubuntu 18.04 system with ROS Melodic Morenia
 * [ros_control](http://wiki.ros.org/ros_control) package
-* MATLAB 2019b or 2020a with Simulink and [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) (if you want to use the provided Simulink interface) 
+* MATLAB 2019b or 2020a with Simulink, [ROS Toolbox](https://www.mathworks.com/products/ros.html), and [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) (if you want to use the provided Simulink interface) 
 
 ## Installation
 
@@ -46,6 +46,10 @@ To view the head-mounted camera run:
 ```bash
 rosrun image_view image_view image:=kumara/camera_head/image
 ```
+Viewing the robot using Rviz:
+```bash
+roslaunch kumara_description kumara_rviz.launch 
+```
 ### Simulink Interface
 
 First, you must connect MATLAB to ROS by:
@@ -56,10 +60,6 @@ rosinit('ip_address_on_ros_machine')
 Run the Simulink model:
 ```bash
 kumaraGazeboSim
-```
-Viewing the robot using Rviz:
-```bash
-roslaunch kumara_description kumara_rviz.launch 
 ```
 To end the ROS session:
 ```bash
