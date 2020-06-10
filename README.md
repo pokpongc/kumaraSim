@@ -19,7 +19,7 @@ sudo apt install ros-melodic-ros-control ros-melodic-ros-controllers
 
 ## Installation
 
-If you already own a catkin workspace, skip this step. Create a catkin workspace.
+Create a catkin workspace. (If you already own a catkin workspace, skip this step).
 ```bash
 mkdir -p <WORKSPACE_NAME>/src
 cd <WORKSPACE_NAME>
