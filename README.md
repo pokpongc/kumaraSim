@@ -70,6 +70,7 @@ rosshutdown
 ```
 
 ## ROS topics
+### Actuation
 Actuator related action | ROS topic
 ------------ | -------------
 Force acted on the x_axis of the base relative to world | kumara/base_x_force_controller/command
@@ -82,6 +83,7 @@ Y_axis orientation of the head relative to the body | kumara/neck_ry_position_co
 Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command
 Joints effort of the right arm | kumara/[q1-q5]_torque controller/command
 
+### Sensing
 Sensor related action | ROS topic
 ------------ | -------------
 Head-mounted camera's output | kumara/camera_head/image
