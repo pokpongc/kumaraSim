@@ -15,8 +15,7 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <!-- <mesh filename="package://kumara_description/meshes/sonar.STL" scale="1 1 1"/> -->
-                    <box size = "0.02 0.02 0.02"/>
+                    <mesh filename="package://kumara_description/meshes/ultrasonicSensor.STL" scale="1 1 1"/>
                 </geometry>
                 <material name="grey"/>
             </visual>

@@ -11,7 +11,11 @@
     </gazebo>
 
     <xacro:include filename="$(find kumara_description)/urdf/kumara_properties.xacro" />
+
+    <!-- BASE -->
     <xacro:include filename="$(find kumara_description)/urdf/kumara_base.gazebo" />
+    <!-- <xacro:include filename="$(find kumara_description)/urdf/omni_steering.xacro" /> -->
+    <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
 
     <!-- ARM -->
     <xacro:include filename="$(find kumara_description)/urdf/kumara_arm.xacro" />
@@ -24,33 +28,63 @@
     <xacro:include filename="$(find kumara_description)/urdf/rplidar_a2.xacro" />
     <xacro:include filename="$(find kumara_description)/urdf/sonar.xacro" />
 
-    <!-- UTILITIES -->
-    <xacro:include filename="$(find kumara_description)/urdf/planar_joint.xacro" />
-
     <!-- COMPONENTS -->
     <xacro:kumaraRA parent = "chassis"/>
     <xacro:planar_joint prefix = "base" parent = "world" child = "base_footprint"/>
+    <!-- <xacro:omni_steering/> -->
     <xacro:kumara_neck parent = "chassis" child = "head_link"/>
     <xacro:zed_mini parent = "head_link" offset_from_parent = "0.072 0 0.1257"/>
     <xacro:rplidar_a2 prefix = "front" 
                 parent = "chassis" 
-                offset_from_parent = "-0.1 0 0.06"
+                offset_from_parent = "0.27 0 0.03"
                 visualize = "false"/>
     <xacro:sonar prefix = "left" 
                 parent = "chassis" 
-                offset_from_parent = "0 0.24 -0.05" 
+                offset_from_parent = "0 0.25 -0.05025" 
                 rotate_from_parent = "0 0 ${PId2}" 
-                max_range = "1.5" 
+                max_range = "4" 
                 min_range = "0.03" 
-                fov = "0.12"
+                fov = "0.08"
                 visualize = "true"/>
     <xacro:sonar prefix = "right" 
                 parent = "chassis" 
-                offset_from_parent = "0 -0.24 -0.05" 
+                offset_from_parent = "0 -0.25 -0.05025" 
                 rotate_from_parent = "0 0 -${PId2}" 
-                max_range = "1.5" 
+                max_range = "4" 
                 min_range = "0.03" 
-                fov = "0.12"
+                fov = "0.08"
+                visualize = "true"/>
+    <xacro:sonar prefix = "front_right" 
+                parent = "chassis" 
+                offset_from_parent = "0.317 -0.173 -0.02525" 
+                rotate_from_parent = "0 0 0" 
+                max_range = "4" 
+                min_range = "0.03" 
+                fov = "0.08"
+                visualize = "true"/>
+    <xacro:sonar prefix = "front_left" 
+                parent = "chassis" 
+                offset_from_parent = "0.317 0.173 -0.02525" 
+                rotate_from_parent = "0 0 0" 
+                max_range = "4" 
+                min_range = "0.03" 
+                fov = "0.08"
+                visualize = "true"/>
+    <xacro:sonar prefix = "back_right" 
+                parent = "chassis" 
+                offset_from_parent = "-0.317 -0.173 -0.02525" 
+                rotate_from_parent = "0 0 ${PI}" 
+                max_range = "4" 
+                min_range = "0.03" 
+                fov = "0.08"
+                visualize = "true"/>
+    <xacro:sonar prefix = "back_left" 
+                parent = "chassis" 
+                offset_from_parent = "-0.317 0.173 -0.02525" 
+                rotate_from_parent = "0 0 ${PI}" 
+                max_range = "4" 
+                min_range = "0.03" 
+                fov = "0.08"
                 visualize = "true"/>
 
 
@@ -77,12 +111,32 @@
         </visual>
     </link>
 
+    <link name="body_link">
+		<inertial>
+            <origin xyz="0 0 0"/>
+			<mass value = "28"/>
+			<inertia ixx = "0.89" iyy = "1.1" izz = "1.64" ixy = "0" ixz = "0" iyz = "0"/>
+		</inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://kumara_description/meshes/bodyPlaceHolderV1.STL" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    
+
     <joint name="base_footprint_to_chassis" type="fixed">
         <parent link="base_footprint"/>
         <child link="chassis"/>
         <origin xyz="0 0 ${BASE_HEIGHT}"/>
     </joint>
 
+
+    <joint name="chassis_to_body_link" type="fixed">
+        <parent link="chassis"/>
+        <child link="body_link"/>
+        <origin xyz = "0.1795 0 0"/>
+    </joint>
 
     <link name="head_link">
         <collision> 
@@ -106,6 +160,11 @@
     <gazebo reference="head_link">
 		<material>Gazebo/Grey</material>
 	</gazebo>
+
+    <gazebo reference="body_link">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
 
 
 </robot>

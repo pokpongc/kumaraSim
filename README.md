@@ -1,12 +1,8 @@
-# Kumara Sim
+# KumaraSim
 
 Gazebo simulation files and description for FIBO's Kumara Robot.
 
-### CAD
-- [x] Base
-- [ ] 5 DOF arm
-- [ ] Hand
-- [ ] Body
+![Alt text](/Images/ExampleKumaraSim.PNG?raw=true)
 
 ## Prerequisite
 
