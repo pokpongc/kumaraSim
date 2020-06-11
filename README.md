@@ -2,7 +2,7 @@
 
 Gazebo simulation files and description for FIBO's Kumara Robot.
 
-![Alt text](/Images/ExampleKumaraSim.PNG =720x)
+![](./Images/ExampleKumaraSim.PNG =720x)
 
 ## Prerequisite
 
