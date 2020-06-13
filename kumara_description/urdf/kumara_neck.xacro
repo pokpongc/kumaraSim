@@ -24,7 +24,7 @@
             <parent link="${parent}" />
             <child link="neck_tran_x" />
             <axis xyz="1 0 0" />
-            <limit effort="10000" lower="-0.2" upper="0.2" velocity="1000" />
+            <limit effort="10000" lower="-0.059" upper="0.059" velocity="1000" />
             <dynamics damping="2.0" />
         </joint>
 
@@ -47,7 +47,7 @@
             <parent link="neck_tran_x" />
             <child link="neck_tran_z" />
             <axis xyz="0 0 1" />
-            <limit effort="10000" lower="-0.2" upper="0.2" velocity="1000" />
+            <limit effort="10000" lower="-0.018" upper="0" velocity="1000" />
             <dynamics damping="2.0" />
         </joint>
 
@@ -70,7 +70,7 @@
             <parent link="neck_tran_z" />
             <child link="neck_rot_x" />
             <axis xyz="1 0 0" />
-            <limit effort="10000" lower="-${PI}" upper="${PI}" velocity="1000" />
+            <limit effort="10000" lower="-1.0472" upper="1.0472" velocity="1000" />
             <dynamics damping="2.0" />
         </joint>
 
@@ -93,7 +93,7 @@
             <parent link="neck_rot_x" />
             <child link="neck_rot_y" />
             <axis xyz="0 1 0" />
-            <limit effort="10000" lower="-${PI}" upper="${PI}" velocity="1000" />
+            <limit effort="10000" lower="-1.0472" upper="1.0472" velocity="1000" />
             <dynamics damping="2.0" />
         </joint>
 

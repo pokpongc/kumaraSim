@@ -17,15 +17,18 @@ kumara:
   r_arm_q5_torque_controller:
     type: effort_controllers/JointEffortController
     joint: link_4_to_link_5
-  base_x_force_controller:
-    type: effort_controllers/JointEffortController
+  base_x_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: base_x_axis_joint
-  base_y_force_controller:
-    type: effort_controllers/JointEffortController
+    pid: {p: 140.0, i: 20, d: 0}
+  base_y_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: base_y_axis_joint
-  base_z_torque_controller:
-    type: effort_controllers/JointEffortController
+    pid: {p: 140.0, i: 20, d: 0}
+  base_z_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: base_z_axis_joint
+    pid: {p: 100.0, i: 40, d: 0}
   neck_x_position_controller:
     type: effort_controllers/JointPositionController
     joint: neck_tran_x_joint
