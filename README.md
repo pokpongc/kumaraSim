@@ -70,11 +70,7 @@ rosshutdown
 Actuator Related Action | ROS Topic | Message Type
 ------------ | ------------- | -------------
 Base velocity command | kumara/base/cmd_vel | geometry_msgs/Twist
-X_axis position of the head relative to the body | kumara/neck_x_position_controller/command | std_msgs/Float64
-Z_axis position of the head relative to the body | kumara/neck_z_position_controller/command | std_msgs/Float64
-X_axis orientation of the head relative to the body | kumara/neck_rx_position_controller/command | std_msgs/Float64
-Y_axis orientation of the head relative to the body | kumara/neck_ry_position_controller/command | std_msgs/Float64
-Z_axis orientation of the head relative to the body | kumara/neck_rz_position_controller/command | std_msgs/Float64
+Head pose command | kumara/head/pose | geometry_msgs/Pose
 Joints effort of the right arm | kumara/[q1-q5]_torque controller/command | std_msgs/Float64
 
 ### Sensing

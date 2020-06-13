@@ -21,6 +21,10 @@
 		respawn="false">
 	</node>
 
+	<node name="head_parser" pkg="kumara_gazebo" type="head_parser.py"
+		respawn="false">
+	</node>
+
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
 		respawn="false" output="screen">
 		<remap from="/joint_states" to="/kumara/joint_states" />
