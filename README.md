@@ -70,7 +70,7 @@ rosshutdown
 Actuator Related Action | ROS Topic | Message Type
 ------------ | ------------- | -------------
 Base velocity command | kumara/base/cmd_vel | geometry_msgs/Twist
-Head pose command | kumara/head/pose | geometry_msgs/Pose
+Head pose command | kumara/head/pose | geometry_msgs/PoseStamped
 Joints effort of the right arm | kumara/[q1-q5]_torque controller/command | std_msgs/Float64
 
 ### Sensing

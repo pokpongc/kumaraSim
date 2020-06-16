@@ -4,7 +4,7 @@ from math import pi, cos, sin
 from tf.transformations import euler_from_quaternion
 
 #import ros msgs
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import Float64
 
 primitive_head_rx_pub = rospy.Publisher('kumara/neck_rx_position_controller/command', Float64, queue_size=10)
@@ -28,7 +28,7 @@ def head_position_callback(pose):
 
 if __name__ == '__main__':
     try:
-        rospy.Subscriber('kumara/head/pose', Pose, head_position_callback)
+        rospy.Subscriber('kumara/head/pose', PoseStamped, head_position_callback)
         rospy.spin()
     except rospy.ROSInterruptException:
         pass
