@@ -11,11 +11,7 @@
                 <mass value = "1"/>
                 <inertia ixx = "0.26" iyy = "0.26" izz = "0.01" ixy = "0" ixz = "0" iyz = "0"/>
             </inertial>
-            <visual>
-                <geometry>
-                    <mesh filename="package://kumara_description/meshes/arm/base_link.STL" scale="1 1 1"/>
-                </geometry>
-            </visual>
+            
         </link>
 
         <link name="link_1">
@@ -62,12 +58,12 @@
 
         <link name="link_4">
             <inertial>
-                <origin rpy="${PId2} 0 ${PId2}"/>
+                <origin rpy="${PId2} 0 ${PId2}" xyz = "0 -${a1} 0"/>
                 <mass value = "1"/>
                 <inertia ixx = "0.26" iyy = "0.26" izz = "0.01" ixy = "0" ixz = "0" iyz = "0"/>
             </inertial>
             <visual>
-                <origin rpy="${PId2} 0 ${PId2}"/>
+                <origin rpy="${PId2} 0 ${PId2}" xyz = "0 -${a1} 0"/>
                 <geometry>
                     <mesh filename="package://kumara_description/meshes/arm/link_4.STL" scale="1 1 1"/>
                 </geometry>
@@ -109,7 +105,7 @@
             <parent link="link_1"/>
             <child link="link_2"/>
             <axis xyz = "0 0 1"/>
-            <origin rpy="${PId2} 0 0" xyz = "0 0 0.13764"/>
+            <origin rpy="${PId2} 0 0" xyz = "0 0 ${L1}"/>
             <dynamics damping="0.7"/>
             <limit lower = "-${PI}" upper = "${PI}" effort = "40" velocity = "1000"/>
         </joint>
@@ -127,7 +123,7 @@
             <parent link="link_3"/>
             <child link="link_4"/>
             <axis xyz = "0 0 1"/>
-            <origin rpy="-${PId2} 0 -${PId2}" xyz = "0 0 0.27597"/>
+            <origin rpy="-${PId2} 0 -${PId2}" xyz = "0 0 ${L2}"/>
             <dynamics damping="0.7"/>
             <limit lower = "-${PI}" upper = "${PI}" effort = "40" velocity = "1000"/>
         </joint>
@@ -136,7 +132,7 @@
             <parent link="link_4"/>
             <child link="link_5"/>
             <axis xyz = "0 0 1"/>
-            <origin rpy="${PId2} 0 ${PId2}"/>
+            <origin rpy="${PId2} 0 ${PId2}" xyz = "0 -${a1} 0"/>
             <dynamics damping="0.7"/>
             <limit lower = "-${PI}" upper = "${PI}" effort = "40" velocity = "1000"/>
         </joint>
